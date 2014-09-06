@@ -1,4 +1,8 @@
-﻿using Emgu.CV;
+﻿/* Copyright (C) 2013-2014 Pavlidis Orestis
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+*/
+
+using Emgu.CV;
 using Emgu.CV.ML;
 using Emgu.CV.ML.MlEnum;
 using Emgu.CV.ML.Structure;

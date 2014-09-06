@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Copyright (C) 2013-2014 Pavlidis Orestis
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +14,8 @@ namespace SV_ANN_Sample.Vision.Structure {
     /// Represents a four-sided figure
     /// </summary>
     public struct Quadrilateral {
+
+        
         /// <summary>
         /// Initializes a new Vision.Structure.Quadrilateral object with the given points (edges)
         /// </summary>
@@ -17,7 +23,7 @@ namespace SV_ANN_Sample.Vision.Structure {
         /// <param name="TopRight">The top right point of the quadrilateral</param>
         /// <param name="BottomRight">The bottom right point of the quadrilateral</param>
         /// <param name="BottomLeft">The bottom left point of the quadrilateral</param>
-        public Quadrilateral(Point TopLeft, Point TopRight, Point BottomRight, Point BottomLeft) {
+        public Quadrilateral(Point TopLeft, Point TopRight, Point BottomRight, Point BottomLeft) : this() {
             this.Points = new Point[] { TopLeft, TopRight, BottomRight, BottomLeft };
         }
 
@@ -26,7 +32,7 @@ namespace SV_ANN_Sample.Vision.Structure {
         /// </summary>
         /// <param name="Points">An enumerable containing the four points of the Quadrilateral</param>
         /// <exception cref="ArgumentException">Thrown when IEnumerable does not contain 4 points</exception>
-        public Quadrilateral(IEnumerable<Point> Points) {
+        public Quadrilateral(IEnumerable<Point> Points) : this() {
             this.Points = Points.ToArray();
             if (this.Points.Length > 4) {
                 throw (new ArgumentException("A quadrilateral can only have four sides"));
@@ -113,7 +119,7 @@ namespace SV_ANN_Sample.Vision.Structure {
         /// </summary>
         public Point[] Points {
             get;
-            protected set;
+            private set;
         }
     }
 }

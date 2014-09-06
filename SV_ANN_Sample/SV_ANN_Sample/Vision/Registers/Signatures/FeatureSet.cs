@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Copyright (C) 2013-2014 Pavlidis Orestis
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;

@@ -1,4 +1,8 @@
-﻿using SV_ANN_Sample.Vision.Registers.Signatures;
+﻿/* Copyright (C) 2013-2014 Pavlidis Orestis
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+*/
+
+using SV_ANN_Sample.Vision.Registers.Signatures;
 using System;
 using System.Collections.Generic;
 using System.IO;

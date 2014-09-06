@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Copyright (C) 2013-2014 Pavlidis Orestis
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -21,7 +25,7 @@ namespace SV_ANN_Sample.Vision.ImageProcessing.ImageFilters {
             }
 
             /*
-            Throughout the process, it is working on a seperate array instead of a pointer to the actual image.
+            Throughout the process, it is working on a separate array instead of a pointer to the actual image.
             This is done for 2 reasons:
                 1.  The image represents white pixels as 0 and black pixels as 1
                 2.  Leave the original image intact, and return a new image

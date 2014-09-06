@@ -1,4 +1,8 @@
-﻿using Emgu.CV;
+﻿/* Copyright (C) 2013-2014 Pavlidis Orestis
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+*/
+
+using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using System;
@@ -11,6 +15,7 @@ using SV_ANN_Sample.Vision.ImageProcessing;
 using SV_ANN_Sample.Vision.Structure;
 using SV_ANN_Sample.Vision.OCR;
 using SV_ANN_Sample.Vision.Registers.Signatures;
+using System.Diagnostics;
 
 namespace SV_ANN_Sample.Vision.Registers {
     /// <summary>
@@ -132,6 +137,7 @@ namespace SV_ANN_Sample.Vision.Registers {
 
                 columnPoints = columnPoints.OrderBy(l => l[0].X).ToList();
             } catch (InvalidOperationException ex) {
+                Debug.WriteLine(ex.Message);
                 throw (new InvalidOperationException("Unable to sort points into columns: Columns with no points were found"));
             }
 
