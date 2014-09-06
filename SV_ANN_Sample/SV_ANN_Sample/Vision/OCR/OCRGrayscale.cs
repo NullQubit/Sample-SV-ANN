@@ -88,7 +88,7 @@ namespace SV_ANN_Sample.Vision.OCR {
         }
 
         /// <summary>
-        /// Releases all resources used by this Vision.OCR.OCR
+        /// Releases all resources used by this Vision.OCR.OCRGrayscale
         /// </summary>
         public void Dispose() {
             if (_Tesseract != null) { _Tesseract.Dispose(); }
