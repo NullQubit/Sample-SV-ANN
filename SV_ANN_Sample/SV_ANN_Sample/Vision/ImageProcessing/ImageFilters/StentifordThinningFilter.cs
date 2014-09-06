@@ -11,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SV_ANN_Sample.Vision.ImageProcessing.ImageFilters {
+    /// <summary>
+    /// A filter used to apply Stentiford's thinning algorithm
+    /// </summary>
     public class StentifordThinningFilter : IFilter {
 
         /// <summary>

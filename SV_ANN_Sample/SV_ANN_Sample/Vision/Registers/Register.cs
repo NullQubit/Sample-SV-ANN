@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace SV_ANN_Sample.Vision.Registers {
     /// <summary>
-    /// Represents a register
+    /// Represents a register sheet
     /// </summary>
     public class Register : IDisposable {
 
@@ -40,20 +40,7 @@ namespace SV_ANN_Sample.Vision.Registers {
             }
         }
 
-        public override string ToString() {
-            string data = "";
-
-            for (int r = 1; r < Rows.Count; r++) {
-                string rowStr = "#" + r + "\t";
-                rowStr += Rows[r].Entry.Name + "\t";
-                rowStr += Rows[r].Entry.ID + "\t";
-                rowStr += Rows[r].Entry.Signature == null ? "Not signed" : "Signed";
-                data += rowStr + Environment.NewLine;
-            }
-
-            return (data);
-        }
-
+        
         /// <summary>
         /// Compares this register with an external (Exported using <see cref="ToFile"/>) register
         /// </summary>
@@ -118,6 +105,19 @@ namespace SV_ANN_Sample.Vision.Registers {
 #endif
         }
 
+        public override string ToString() {
+            string data = "";
+
+            for (int r = 1; r < Rows.Count; r++) {
+                string rowStr = "#" + r + "\t";
+                rowStr += Rows[r].Entry.Name + "\t";
+                rowStr += Rows[r].Entry.ID + "\t";
+                rowStr += Rows[r].Entry.Signature == null ? "Not signed" : "Signed";
+                data += rowStr + Environment.NewLine;
+            }
+
+            return (data);
+        }
 
         /// <summary>
         /// Gets or sets the rows of the register

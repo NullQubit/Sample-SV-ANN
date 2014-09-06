@@ -181,7 +181,7 @@ namespace SV_ANN_Sample.Vision.Registers {
             for (int row = 1; row < register.Rows.Count; row++) { //skip first row (Headers)
                 Cell signatureCell = register.Rows[row].Cells[Columns - 1]; //last cell is signature cell
 
-                Quadrilateral cropRegion = signatureCell.Quadrilateral.Copy();
+                Quadrilateral cropRegion = signatureCell.AbsoluteRegion.Copy();
                 cropRegion.Deflate(15);
                 registerTable.Draw(cropRegion, MCvColor.Black);
             }
@@ -194,8 +194,8 @@ namespace SV_ANN_Sample.Vision.Registers {
                 foreach (Cell cell in row.Cells) {
                     //Wrap quadriletral into a rectangular region
                     using (Image<Gray, Byte> Mask = new Image<Gray, byte>(register.Image.Size)) {
-                        Mask.Draw(cell.Quadrilateral, MCvColor.White);
-                        cell.SetContents(register.SiganturesOnlyImage.Copy(Mask).Copy(cell.Quadrilateral.MinAreaRectangle()), Columns);
+                        Mask.Draw(cell.AbsoluteRegion, MCvColor.White);
+                        cell.SetContents(register.SiganturesOnlyImage.Copy(Mask).Copy(cell.AbsoluteRegion.MinAreaRectangle()), Columns);
                         //cell.ProcessedContents.Save("Debug.png");
                     }
                 }

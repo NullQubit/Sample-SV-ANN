@@ -19,22 +19,15 @@ namespace SV_ANN_Sample.Vision.Registers {
     /// Represents a register cell
     /// </summary>
     public class Cell : IDisposable {
-        public Image<Gray, Byte> Contents { get; protected set; }
-        public Image<Gray, Byte> ProcessedContents { get; protected set; }
-        public int Number { get; set; }
-        public Quadrilateral Quadrilateral { get; set; }
-        public Quadrilateral RelativeQuadrilateral { get; protected set; }
-
-
         /// <summary>
         /// Initializes a new Vision.Registers.Cell object
         /// </summary>
         /// <param name="Quadrilateral">The region of the cell</param>
         /// <param name="Number">The cell's number</param>
         public Cell(Quadrilateral Quadrilateral, int Number) {
-            this.Quadrilateral = Quadrilateral;
+            this.AbsoluteRegion = Quadrilateral;
             this.Number = Number;
-            this.RelativeQuadrilateral = Quadrilateral.GetRelative();
+            this.Region = Quadrilateral.GetRelative();
         }
 
 
@@ -76,5 +69,26 @@ namespace SV_ANN_Sample.Vision.Registers {
             int totalPixels = ProcessedContents.Width * ProcessedContents.Height;
             return ((double)whitePixels / totalPixels > threshold);
         }
+
+        /// <summary>
+        /// Gets the contents of the cell
+        /// </summary>
+        public Image<Gray, Byte> Contents { get; protected set; }
+        /// <summary>
+        /// Gets the processed contents of the cell
+        /// </summary>
+        public Image<Gray, Byte> ProcessedContents { get; protected set; }
+        /// <summary>
+        /// Gets or sets the cell's number
+        /// </summary>
+        public int Number { get; set; }
+        /// <summary>
+        /// Gets or sets the cell's region (on the register sheet)
+        /// </summary>
+        public Quadrilateral AbsoluteRegion { get; set; }
+        /// <summary>
+        /// Gets the cell's region
+        /// </summary>
+        public Quadrilateral Region { get; protected set; }
     }
 }

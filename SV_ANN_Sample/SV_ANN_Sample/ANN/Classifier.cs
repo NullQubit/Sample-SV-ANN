@@ -167,7 +167,7 @@ namespace SV_ANN_Sample.ANN {
         }
 
         /// <summary>
-        /// Gets or sets the number and size of the hidden layers of the network
+        /// Gets or sets the number and size of the hidden layers of the network.  Default value is a single layer with 10 neurons
         /// </summary>
         /// <exception cref="ArgumentException">Thrown when the length of the layers is zero/exception>
         public int[] HiddenLayers {

@@ -61,7 +61,7 @@ namespace SV_ANN_Sample.Vision.Structure {
 
         /// <summary>
         /// Converts this quadrilateral's points into relative (to the closest point) points and returns a 
-        /// new quadrilateral with these points (e.g. Top-Right and Bottom-Left will be 0,0)
+        /// new quadrilateral with these points (e.g. Top-Left point will be 0,0)
         /// </summary>
         /// <returns>The relative quadrilateral</returns>
         public Quadrilateral GetRelative() {

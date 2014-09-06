@@ -11,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SV_ANN_Sample.Vision.ImageProcessing.ImageFilters {
+    /// <summary>
+    /// Interface used to define behaviour of a bitmap filter
+    /// </summary>
     public interface IFilter {
         /// <summary>
         /// Applies the filter on a System.Drawing.Bitmap and returns a new Bitmap
