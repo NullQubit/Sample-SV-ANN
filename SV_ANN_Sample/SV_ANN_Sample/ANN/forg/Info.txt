@@ -1,0 +1,1 @@
+﻿This folder contains the normalized data of the feature sets of artificial forgeries

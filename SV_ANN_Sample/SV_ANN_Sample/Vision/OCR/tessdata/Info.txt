@@ -1,0 +1,1 @@
+﻿This folder contains the data required by the tesseract engine to perform OCR operations

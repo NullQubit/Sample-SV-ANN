@@ -32,8 +32,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emgu.CV">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.GPU">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.GPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.ML">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.ML.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.OCR">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.OCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.OpenCL">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.OpenCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Stitching">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.Stitching.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>G:\Emgu-CV\bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util">
+      <HintPath>G:\Emgu-CV\bin\Emgu.Util.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +67,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ANN\Classifier.cs" />
+    <Compile Include="Vision\ImageProcessing\ImageExtensions.cs" />
+    <Compile Include="Vision\ImageProcessing\ImageFilters\IFilter.cs" />
+    <Compile Include="Vision\ImageProcessing\ImageFilters\StentifordThinningFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vision\ImageProcessing\ImageFilters\ZSThinningFilter.cs" />
+    <Compile Include="Vision\OCR\OCRGrayscale.cs" />
+    <Compile Include="Vision\Registers\Cell.cs" />
+    <Compile Include="Vision\Registers\Entry.cs" />
+    <Compile Include="Vision\Registers\Register.cs" />
+    <Compile Include="Vision\Registers\RegisterScanner.cs" />
+    <Compile Include="Vision\Registers\Row.cs" />
+    <Compile Include="Vision\Registers\Signatures\FeatureSet.cs" />
+    <Compile Include="Vision\Registers\Signatures\Signature.cs" />
+    <Compile Include="Vision\Structure\MCvColor.cs" />
+    <Compile Include="Vision\Structure\Quadrilateral.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Vision\OCR\tessdata\eng.cube.bigrams" />
+    <None Include="Vision\OCR\tessdata\eng.cube.fold" />
+    <None Include="Vision\OCR\tessdata\eng.cube.lm" />
+    <None Include="Vision\OCR\tessdata\eng.cube.nn" />
+    <None Include="Vision\OCR\tessdata\eng.cube.params" />
+    <None Include="Vision\OCR\tessdata\eng.cube.size" />
+    <None Include="Vision\OCR\tessdata\eng.cube.word-freq" />
+    <None Include="Vision\OCR\tessdata\eng.tesseract_cube.nn" />
+    <None Include="Vision\OCR\tessdata\eng.traineddata" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ANN\forg\forg1.fs" />
+    <Content Include="ANN\forg\forg2.fs" />
+    <Content Include="ANN\forg\forg3.fs" />
+    <Content Include="ANN\forg\forg4.fs" />
+    <Content Include="ANN\forg\forg5.fs" />
+    <Content Include="ANN\forg\forg6.fs" />
+    <Content Include="ANN\forg\forg7.fs" />
+    <Content Include="ANN\forg\forg8.fs" />
+    <Content Include="ANN\forg\forg9.fs" />
+    <Content Include="ANN\forg\Info.txt" />
+    <Content Include="Vision\OCR\tessdata\Info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
