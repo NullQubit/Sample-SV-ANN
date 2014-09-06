@@ -14,6 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SV_ANN_Sample.Vision.ImageProcessing {
+    /// <summary>
+    /// Extensions to the Emgu.CV.Image class.  Contains various image processing algorithms
+    /// </summary>
     public static class ImageExtensions {
 
         /// <summary>
