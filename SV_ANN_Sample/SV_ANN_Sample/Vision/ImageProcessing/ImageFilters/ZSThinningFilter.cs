@@ -28,14 +28,14 @@ namespace SV_ANN_Sample.Vision.ImageProcessing.ImageFilters {
             }
 
             /*
-            Throughout the process, it is working on a separate array instead of a pointer to the actual image.
+            Throughout the process, a separate array is used instead of a pointer to the actual image.
             This is done for 2 reasons:
                 1.  The image represents white pixels as 0 and black pixels as 1
-                2.  Leave the original image intact, and return a new image
+                2.  Need to leave the original image intact, and return a new image
             
-            Representing white pixels as 0 and black pixels as 1 seems to be more efficient (~28% faster) that using 0x00 and 0xFF
+            Representing white pixels as 0 and black pixels as 1 seems to be more efficient (~28% faster) than using 0x00 and 0xFF
             (Mainly for counting black pixel neighbours).  The overhead of looping through the image twice to create
-            this new seperate array is much smaller than working with 0x00 and 0xFF
+            this new separate array is much smaller than working with 0x00 and 0xFF
             */
 
             Bitmap destinationImage = new Bitmap(SourceImage.Width, SourceImage.Height, OutputFormat);
